@@ -1,0 +1,29 @@
+---
+
+- name: Policy Group Creation
+  hosts: apic
+  connection: local
+  gather_facts: False
+
+
+  tasks:
+    - name: 1-gig Port channel Policy Group
+      aci_interface_policy_leaf_policy_group:
+        host: "{{ ansible_host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: False
+        lag_type: link
+        policy_group: "{{ item.aps }}"
+        link_level_policy: link-1gb-auto
+        cdp_policy: cdp-enabled
+        lldp_policy: lldp-enabled
+        port_channel_policy: default
+        stp_interface_policy: bpduguard-on
+        aep: lg1fb1ag1ec20gci01
+        state: present
+      with_items:
+      - {aps: GCI01-RBRKN01-CLU01-1gig}
+	    - {aps: GCI01-RBRKN02-CLU01-1gig}
+	    - {aps: GCI01-RBRKN03-CLU01-1gig}
+	    - {aps: GCI01-RBRKN04-CLU01-1gig}
