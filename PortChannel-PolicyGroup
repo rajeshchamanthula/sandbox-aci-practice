@@ -27,3 +27,8 @@
       - {aps: GCI01-RBRKN02-CLU01-1gig}
       - {aps: GCI01-RBRKN03-CLU01-1gig}
       - {aps: GCI01-RBRKN04-CLU01-1gig}
+      register: output
+      
+      debug:
+        var: output
+     
