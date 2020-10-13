@@ -24,6 +24,6 @@
         state: present
       with_items:
       - {aps: GCI01-RBRKN01-CLU01-1gig}
-	    - {aps: GCI01-RBRKN02-CLU01-1gig}
-	    - {aps: GCI01-RBRKN03-CLU01-1gig}
-	    - {aps: GCI01-RBRKN04-CLU01-1gig}
+      - {aps: GCI01-RBRKN02-CLU01-1gig}
+      - {aps: GCI01-RBRKN03-CLU01-1gig}
+      - {aps: GCI01-RBRKN04-CLU01-1gig}
